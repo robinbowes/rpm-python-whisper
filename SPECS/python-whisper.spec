@@ -5,7 +5,7 @@
 
 Summary:       Fixed size round-robin style database
 Name:          python-%{module}
-Version:       0.9.7
+Version:       0.9.9
 Release:       1%{?dist}
 Source:        https://launchpad.net/graphite/0.9/%{version}/%{module}-%{version}.tar.gz
 License:       Apache Software License 2.0
@@ -44,6 +44,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/whisper-fetch.py
 %{_bindir}/whisper-info.py
 %{_bindir}/whisper-resize.py
+%{_bindir}/whisper-set-aggregation-method.py
 %{_bindir}/whisper-update.py
 %{python_sitelib}/%{module}-%{version}-py%{pyver}.egg-info
 %{python_sitelib}/%{module}.py
@@ -54,5 +55,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(0755,graphite,graphite) %dir %{_localstatedir}/lib/graphite/storage/whisper
 
 %changelog
+* Wed Oct 26 2011 Jeff Goldschrafe <jeff@holyhandgrenade.org> - 0.9.9-1
+- Bump to version 0.9.9
+
 * Wed Oct 26 2011 Jeff Goldschrafe <jeff@holyhandgrenade.org> - 0.9.7-1
 - Initial package
